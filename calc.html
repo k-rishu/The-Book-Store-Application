@@ -1,0 +1,132 @@
+
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+
+    <style>
+        fieldset {
+            width: 60%;
+            margin: 20px;
+        }
+    </style>
+
+   
+
+</head>
+
+<body>
+    <fieldset>
+        <legend>Toolbar</legend>
+        <div>
+            Number
+            <input type='text' id='number' />
+            <input type='button' value='Add To List' onclick="addToList()"  />
+            
+            <input type='button' value='Clear Display' 
+                    onclick="clearDisplay()" />
+            
+            <input type='button' value='Reset Calculator' onclick="reset()"  />
+
+            <br/>
+            <input type='button' value='Sum' onclick="sumDisplay()"    />
+            <input type='button' value='Average' onclick="averageDisplay()"  />
+            <input type='button' value='Find Min' onclick="findMinDisplay()"  />
+
+        </div>
+
+    </fieldset>
+
+    <hr/>
+
+    <fieldset>
+        <legend>Console</legend>
+
+        <div id='console'>
+            <!-- <p>sum is 60</p>
+            <p>average is 20</p> -->
+        </div>
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Number List</legend>
+
+        <ul id='numberList'>
+            <!-- <li>29</li>
+            <li>11</li>
+            <li>10</li> -->
+        </ul>
+
+        <input type='button' value='refresh list' onclick = "refresh()" />
+    </fieldset>
+
+    <script>
+        let numbers = [];
+        var cl = document.getElementById('console');
+        var nl = document.getElementById('numberList');
+
+
+        var addToList = function(){
+            var num = document.getElementById('number').value; 
+            if(!isNaN(num)){
+                var temp = parseFloat(num);
+                numbers.push(temp);
+                nl.innerHTML += '<li>'+temp+'</li>';
+            }
+            else{
+                cl.innerHTML += "Not a number<br>";
+            }
+        }
+
+        var sumDisplay=function(){  // sum
+             var res = 0;
+            for(var i=0;i<numbers.length; i++){
+                res += numbers[i];
+               }
+               cl.innerHTML +='sum is '+ res+ "<br>";
+        }
+
+        var averageDisplay = function(){ // average
+            var res = 0;
+            for(var i=0; i<numbers.length; i++){
+                res+= numbers[i];
+            }
+            cl.innerHTML +='average is '+ res/numbers.length+ "<br>";
+        }
+
+        var findMinDisplay = function(){  
+            var res= Number.MAX_SAFE_INTEGER;
+            for(var i=0; i<numbers.length; i++){
+                if(numbers[i]<res)
+                    res = numbers[i];
+            }
+            cl.innerHTML +='minimum is '+ res+ "<br>";
+        }
+        
+        var reset = function(){
+            numbers = [];
+            cl.innerHTML = "";
+            nl.innerHTML = "";
+        }
+
+        var clearDisplay = function(){
+            cl.innerHTML = "";
+            nl.innerHTML = "";
+        }
+
+        var refresh = function(){
+            nl.innerHTML = "";
+           
+        }
+
+    </script>
+    
+</body>
+
+</html>
