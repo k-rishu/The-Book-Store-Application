@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+</head>
+<body>
+    <br><br><br>
+    
+        <label>Search:</label>
+        <select id="query">
+            <option value="ISBN">ISBN</option>
+            <option value="Author">Author</option>
+            <option value="Title">Title</option>
+        </select>
+    
+  
+    <input type="text" id="value" name="value">
+    <button onclick="bookManager.searchBooks()">Search</button>
+    <br><br><br>
+
+    <table>
+        <tbody id="tabledb"></tbody>
+    </table>
+
+    <script src="assignment3.3.js"></script>
+</body>
+</html>
