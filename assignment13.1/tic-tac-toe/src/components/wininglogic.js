@@ -44,8 +44,18 @@ const game=()=>{
         computerFill();
     }else
         userFill();
-    if(isWin()==cross)
+    
+    if(!arr.includes(-1)){
+        console.log("Draw!");
+        return;
+    }
+
+    if(isWin()==cross){
         console.log("Usee Won!");
-    else if(isWin() == zero)
+        return;
+    }
+    else if(isWin() == zero){
         console.log("Computer Won!");
+        return;
+    }
 }
