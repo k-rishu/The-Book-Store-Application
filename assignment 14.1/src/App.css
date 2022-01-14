@@ -1,0 +1,101 @@
+body{
+    padding:0;
+    margin:0;
+}
+
+h1{
+    font-size:20px;
+    color:orangered;
+}
+
+.site-title{
+    padding-left: 20px;
+    color: rgb(14, 115, 146);
+    font-size:2em;
+    text-shadow: -2px -2px 2px darkgray;
+}
+
+AppHeader{
+    background-color:gray;
+}
+
+header{
+    display:flex;
+
+    background-color:rgb(235, 187, 220);
+    height:80px;
+}
+
+.app{
+    display:flex;
+    flex-direction:column;
+}
+
+.game{
+    /* border:2px solid gray; */
+    padding:10px;
+    margin-top:30px;
+    width:200px;
+    height:400px;
+    align-self:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-between;
+    border-radius:8px;
+}
+
+.board{
+    
+    
+    width:100%;
+    height:200px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    
+}
+.cells{
+    width:180px;
+    
+    
+    
+}
+
+.cell{
+    width:60px;
+    height:60px;   
+    background-color:white;
+    border-radius:8px;
+}
+.cell:hover{
+    background-color:lightblue;
+    transform:scale(1.1, 1.1);
+}
+
+.textBox{
+    width:15px;
+    margin-right:5px;
+}
+.textBox:hover{
+    transform:scale(1.3, 1.1);
+}
+
+.score{
+    display: flex;
+    justify-content:space-between;
+    padding-left:8px;
+    padding-right:8px;
+    margin: 3px;
+}
+
+.reset-button:hover{
+    background-color:lightblue;
+    transform:scale(1.2, 1.2);
+}
+.reset-button{
+    width: 69px;
+    height:29px;
+    border-radius:6px;
+    background-color: cornflowerblue;
+}
